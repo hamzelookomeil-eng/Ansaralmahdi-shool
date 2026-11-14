@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>شماره کارت مدرسه انصارالمهدی</title>
+    <link rel="stylesheet" href="start.css">
+</head>
+<body>
+
+    <main>
+        <section>
+            <div class="card" style="max-width: 520px; margin: 35px auto; text-align: center;">
+                <p>شماره کارت مدرسه</p>
+
+                <!-- شماره کارت واقعی را جایگزین این مقدار کن -->
+                <p id="cardNumber" dir="ltr" style="font-size: 22px; font-weight: bold; letter-spacing: 1px;">
+                    6037-9975-9947-9970
+                </p>
+
+                <button class="btn" type="button" onclick="copyCardNumber()">
+                    کپی شماره کارت
+                </button>
+
+                <p id="copyMessage" aria-live="polite"></p>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        function copyCardNumber() {
+            const number = document.getElementById("cardNumber").textContent.trim().replaceAll("-", "").replaceAll(" ", "");
+            const message = document.getElementById("copyMessage");
+
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(number)
+                    .then(() => message.textContent = "شماره کارت کپی شد.")
+                    .catch(() => message.textContent = "کپی انجام نشد؛ شماره را دستی انتخاب کن.");
+            } else {
+                const field = document.createElement("textarea");
+                field.value = number;
+                document.body.appendChild(field);
+                field.select();
+
+                try {
+                    document.execCommand("copy");
+                    message.textContent = "شماره کارت کپی شد.";
+                } catch (error) {
+                    message.textContent = "کپی انجام نشد؛ شماره را دستی انتخاب کن.";
+                }
+
+                document.body.removeChild(field);
+            }
+        }
+    </script>
+
+</body>
+</html>

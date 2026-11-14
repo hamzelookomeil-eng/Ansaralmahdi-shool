@@ -1,0 +1,47 @@
+.news-section,
+.rules-section,
+.teachers-section {
+    width: 90%;
+    margin: 50px auto;
+}
+
+.news-container,
+.teachers-container {
+    display: flex;
+    justify-content: center;
+    gap: 22px;
+    flex-wrap: wrap;
+}
+
+.news-card,
+.teacher-card {
+    flex: 1 1 250px;
+    background-color: var(--white-cream);
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid var(--cream-dark);
+    box-shadow: 0 5px 18px rgba(73,49,38,0.08);
+    transition: 0.3s;
+}
+.news-card:hover,
+.teacher-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 22px rgba(255, 81, 0, 0.15);
+}
+
+.news-card h3,
+.teacher-card h3 {
+    color: var(--brown);
+    margin-bottom: 12px;
+    font-size: 19px;
+}
+.news-card{
+    background-color: rgb(255, 251, 249);
+    color: rgb(98, 32, 7);
+}
+.section-title{
+    color: rgb(72, 29, 2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

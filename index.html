@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مدرسه انصارالمهدی</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- هدر -->
+    <header class="site-header">
+
+        <div class="header-top">
+
+            <h2 class="school-logo">انصارالمهدی</h2>
+
+            <nav class="navbar">
+                <a href="news.html">اخبار</a>
+                <a href="#rules">قوانین</a>
+                <a href="card-number-school.html">شماره کارت</a>
+                <a href="#contact">تماس با مدرسه</a>
+            </nav>
+
+        </div>
+
+    </header>
+
+    <main>
+
+        <!-- هیرو -->
+        <section class="hero" id="home">
+
+            <div class="hero-content">
+
+                <h1>به مدرسه انصارالمهدی خوش آمدید</h1>
+
+                <p>
+                    محیطی برای یادگیری، رشد، تلاش و ساختن آینده‌ای روشن
+                </p>
+
+                <a href="news.html" class="hero-btn">
+                    مشاهده اخبار مدرسه
+                </a>
+
+            </div>
+
+        </section>
+
+        <!-- اسلایدر -->
+        <section class="slider-section">
+
+            <h2 class="section-title">نگاهی به مدرسه ما</h2>
+
+            <div class="school-slider">
+
+                <div class="slides">
+
+                    <div class="slide active">
+                        <img class="first" src="first.jpg" alt="نمای مدرسه">
+                    </div>
+
+                    <div class="slide">
+                        <img src="second.jpg" alt="محیط مدرسه">
+                    </div>
+
+                    <div class="slide">
+                        <img src="third.jpg" alt="ساختمان مدرسه">
+                    </div>
+
+                </div>
+
+                <button class="slider-prev" onclick="changeSlide(-1)">
+                    &#10095;
+                </button>
+
+                <button class="slider-next" onclick="changeSlide(1)">
+                    &#10094;
+                </button>
+
+                <div class="slider-dots">
+                    <span class="dot active" onclick="showSlide(0)"></span>
+                    <span class="dot" onclick="showSlide(1)"></span>
+                    <span class="dot" onclick="showSlide(2)"></span>
+                </div>
+
+            </div>
+
+        </section>
+        <!-- قوانین -->
+        <section class="rules-section" id="rules">
+
+            <h2 class="section-title">قوانین و مقررات مدرسه</h2>
+
+            <div class="rule-card">
+                <ul>
+                    <li>حضور به‌موقع در مدرسه و رعایت نظم</li>
+                    <li>احترام به دبیران و دانش‌آموزان</li>
+                    <li>رعایت نظافت محیط مدرسه</li>
+                    <li>همراه داشتن وسایل موردنیاز آموزشی</li>
+                    <li>به همراه نداشتن وسایل الکترونیکی از جمله موبایل</li>
+                </ul>
+            </div>
+
+        </section>
+
+        <!-- تماس با مدرسه -->
+        <section class="contact-section" id="contact">
+
+            <div class="contact-box">
+
+                <h2>ارتباط با مدرسه</h2>
+
+                <p>برای ارتباط با مدرسه انصارالمهدی می‌توانید با شماره زیر تماس بگیرید.</p>
+
+                <h3 dir="ltr">۰۲۱۳۶۱۱۰۶۶۸</h3>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- فوتر -->
+    <footer class="site-footer">
+
+        <h3>مدرسه انصارالمهدی</h3>
+
+        <p>تمامی حقوق این وب‌سایت محفوظ است.</p>
+
+        <p>شماره تماس: ۰۲۱۳۶۱۱۰۶۶۸</p>
+
+    </footer>
+
+    <!-- اسکریپت اسلایدر -->
+    <script>
+
+        let currentSlide = 0;
+
+        const slides = document.querySelectorAll(".slide");
+        const dots = document.querySelectorAll(".dot");
+
+        function showSlide(index) {
+
+            slides[currentSlide].classList.remove("active");
+            dots[currentSlide].classList.remove("active");
+
+            currentSlide = (index + slides.length) % slides.length;
+
+            slides[currentSlide].classList.add("active");
+            dots[currentSlide].classList.add("active");
+
+        }
+
+        function changeSlide(direction) {
+            showSlide(currentSlide + direction);
+        }
+
+    </script>
+
+</body>
+</html>
